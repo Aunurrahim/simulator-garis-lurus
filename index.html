@@ -3,62 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulator Persamaan Garis Lurus</title>
+    <title>Simulator Persamaan Garis</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Simulator Interaktif Persamaan Garis Lurus</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang</a>
+        </nav>
     </header>
-    
     <main>
         <section class="control-panel">
             <div class="input-group">
-                <label for="equation-type">Bentuk Persamaan:</label>
-                <select id="equation-type">
-                    <option value="slope-intercept">y = mx + c</option>
-                    <option value="point-slope">y - y₁ = m(x - x₁)</option>
-                    <option value="standard">Ax + By + C = 0</option>
-                </select>
+                <label for="input-x1">Titik 1 (x₁, y₁):</label>
+                <input type="number" id="input-x1" placeholder="x₁">
+                <input type="number" id="input-y1" placeholder="y₁">
             </div>
-            
-            <div id="slope-intercept-inputs" class="equation-inputs">
-                <div class="input-group">
-                    <label for="slope">Kemiringan (m):</label>
-                    <input type="range" id="slope" min="-5" max="5" step="0.1" value="1">
-                    <input type="number" id="slope-number" value="1" step="0.1">
-                </div>
-                
-                <div class="input-group">
-                    <label for="intercept">Perpotongan (c):</label>
-                    <input type="range" id="intercept" min="-10" max="10" step="0.5" value="0">
-                    <input type="number" id="intercept-number" value="0" step="0.5">
-                </div>
+            <div class="input-group">
+                <label for="input-x2">Titik 2 (x₂, y₂):</label>
+                <input type="number" id="input-x2" placeholder="x₂">
+                <input type="number" id="input-y2" placeholder="y₂">
             </div>
-            
             <div class="actions">
                 <button id="draw-btn">Gambar Garis</button>
                 <button id="reset-btn">Reset</button>
             </div>
         </section>
-        
         <section class="graph-container">
             <canvas id="graph-canvas" width="600" height="600"></canvas>
         </section>
-        
         <section class="calculation-results">
             <h3>Informasi Garis:</h3>
-            <p>Persamaan: <span id="equation-text">y = 1x + 0</span></p>
-            <p>Titik potong sumbu X: <span id="x-intercept">(0, 0)</span></p>
-            <p>Titik potong sumbu Y: <span id="y-intercept">(0, 0)</span></p>
-            <p>Kemiringan: <span id="slope-value">1</span></p>
+            <p>Persamaan: <span id="equation-text">y = mx + c</span></p>
+            <p>Titik potong X: <span id="x-intercept">-</span></p>
+            <p>Titik potong Y: <span id="y-intercept">-</span></p>
+            <p>Kemiringan: <span id="slope-value">-</span></p>
         </section>
     </main>
-    
     <footer>
-        <p>© 2023 Simulator Matematika</p>
+        <p>© 2025 Simulator Matematika</p>
+        <audio id="bg-music" autoplay loop>
+            <source src="data/bg-music.mp3" type="audio/mpeg">
+        </audio>
     </footer>
-    
     <script src="script.js"></script>
 </body>
 </html>
